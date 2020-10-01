@@ -14,12 +14,12 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     serverPort = port
     serverAddress = mailserver
     clientSocket.bind((serverAddress, serverPort))
-    print("The server is ready to receive")
+    # print("The server is ready to receive")
     clientSocket.listen(1)
     # Fill in end
 
     recv = clientSocket.recv(1024).decode()
-    print(recv)
+    # print(recv)
     if recv[:3] != '220':
         recv = '220 reply not received from server.'
         # print recv
